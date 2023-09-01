@@ -9,12 +9,12 @@ import java.util.Random;
 // has factory method - createPlayfulPeT()
 public abstract class PlayfulPetAssistant {
     protected static final double DEFAULT_RENT_TIME = 1.0;
-    protected static final String DEFAULT_TOUR = "all-round pack";
+    protected static final String DEFAULT_TOUR = "all-rounder pack";
 
     protected Person currentPerson;
     protected double currentRentTime = PlayfulPetAssistant.DEFAULT_RENT_TIME;
     protected static String[] availableActivities = {"eat", "walk", "drink", "nap", "pet", "run", "explore"};
-    protected static String[] availableTours = {"all-round pack", "deluxe rounder pack"};
+    protected static String[] availableTours = {"all-rounder pack", "deluxe rounder pack"};
 
     public String[] getActivities() {
         return this.availableActivities;
