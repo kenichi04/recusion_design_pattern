@@ -53,30 +53,35 @@ public abstract class PlayfulPetAssistant {
 
     // ペットレンタル時のpersonのサポートに関する全体のアルゴリズム実行
     public double runAssistanceTour(Person person) {
-        return this.runAssistanceTour(person, this.DEFAULT_TOUR);
+        final int amount = 1;
+        final String tour = this.DEFAULT_TOUR;
+        return this.runAssistanceTour(person, tour, amount);
     }
 
-    public double runAssistanceTour(Person person, String tour) {
+    public double runAssistanceTour(Person person, String tour, int amount) {
         if (!this.isValidTour(tour)) System.out.println("The tour guide does not accept the " + tour + "tour.");
         // use factory method
-        PlayfulPet playfulPet = this.createPlayfulPet();
+        List<PlayfulPet> pets = this.createPlayfulPets(amount);
+        double rentalCosts = 0;
 
         System.out.println("");
         System.out.println("Booting up... Playful Pet Assistance robot at your service.");
         System.out.println("Printing information about the Person to service..." + person);
         System.out.println("");
-        System.out.println("Printing information about the Playful pet - " + playfulPet.getPetName() + " to service..." + playfulPet);
 
-        if (tour.equals("all-rounder pack") || tour.equals("deluxe rounder pack")) {
-            int count = tour.equals("all-rounder pack") ? 1 : 3;
-            this.genericRounderTour(count, person, playfulPet);
-        }
-        // tour 追加可
-        else {
-            System.out.println("The tour assistant robot for " + playfulPet.getPetName() + " and " + person.getName() + " did nothing.");
-        }
+        for (PlayfulPet playfulPet : pets) {
+            System.out.println("Printing information about the Playful pet - " + playfulPet.getPetName() + " to service..." + playfulPet);
 
-        double rentalCosts = playfulPet.getRentalCosts() * this.getCurrentRentTime();
+            if (tour.equals("all-rounder pack") || tour.equals("deluxe rounder pack")) {
+                int count = tour.equals("all-rounder pack") ? 1 : 3;
+                this.genericRounderTour(count, person, playfulPet);
+            }
+            // tour 追加可
+            else {
+                System.out.println("The tour assistant robot for " + playfulPet.getPetName() + " and " + person.getName() + " did nothing.");
+            }
+            rentalCosts += playfulPet.getRentalCosts() * this.getCurrentRentTime();
+        }
         this.reset();
 
         return rentalCosts;
@@ -100,4 +105,6 @@ public abstract class PlayfulPetAssistant {
 
     // Factory Method
     public abstract PlayfulPet createPlayfulPet();
+
+    public abstract List<PlayfulPet> createPlayfulPets(int amount);
 }
