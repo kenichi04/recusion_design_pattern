@@ -7,13 +7,16 @@ import com.example.design_pattern.factory.PlayfulRabbitAssistant;
 public class Main {
     public static void main(String[] args) {
         FairyWorld fairyWorld = new FairyWorld();
+        // set up PlayfulPetAssistants
+        fairyWorld.addPlayfulPetAssistant("cat", new PlayfulCatAssistant());
+        fairyWorld.addPlayfulPetAssistant("dog", new PlayfulDogAssistant());
+        fairyWorld.addPlayfulPetAssistant("rabbit", new PlayfulRabbitAssistant());
+
         Person jessica = new Person("Jessica", "Roller",
                 30, 1.65, 95, "female");
 
-        fairyWorld.rentPet(new PlayfulCatAssistant(), jessica);
-        fairyWorld.rentPet(new PlayfulDogAssistant(), jessica);
-        fairyWorld.rentPet(new PlayfulRabbitAssistant(), jessica);
-
         fairyWorld.rentPet("cat", jessica, 1, "all-rounder pack");
+        fairyWorld.rentPet("dog", jessica, 1, "all-rounder pack");
+        fairyWorld.rentPet("rabbit", jessica, 1, "all-rounder pack");
     }
 }

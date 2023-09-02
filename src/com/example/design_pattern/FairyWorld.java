@@ -1,15 +1,13 @@
 package com.example.design_pattern;
 
-import com.example.design_pattern.factory.PlayfulCatAssistant;
-import com.example.design_pattern.factory.PlayfulDogAssistant;
 import com.example.design_pattern.factory.PlayfulPetAssistant;
-import com.example.design_pattern.factory.PlayfulRabbitAssistant;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
 public class FairyWorld {
+    private Map<String, PlayfulPetAssistant> assistantMap = new HashMap<>();
 
     public void rentPet(PlayfulPetAssistant assistant, Person person) {
         System.out.println("Thank you for your pet rental!");
@@ -19,7 +17,6 @@ public class FairyWorld {
     }
 
     public void rentPet(String petKey, Person person, int amount, String tour) {
-        Map<String, PlayfulPetAssistant>  assistantMap = getAssistantMap();
         PlayfulPetAssistant assistant = assistantMap.get(petKey);
         if (Objects.isNull(assistant)) {
             System.out.println("Fairy World can not rent " + petKey + ".");
@@ -32,11 +29,7 @@ public class FairyWorld {
         System.out.println("xxxxxxxxxxxxxxxxxxxx" + System.lineSeparator());
     }
 
-    private Map<String, PlayfulPetAssistant> getAssistantMap() {
-        Map<String, PlayfulPetAssistant> assistantMap = new HashMap<>();
-        assistantMap.put("cat", new PlayfulCatAssistant());
-        assistantMap.put("dog", new PlayfulDogAssistant());
-        assistantMap.put("rabbit", new PlayfulRabbitAssistant());
-        return assistantMap;
+    public void addPlayfulPetAssistant(String petKey, PlayfulPetAssistant assistant) {
+        this.assistantMap.put(petKey, assistant);
     }
 }
