@@ -1,6 +1,6 @@
-package com.example.design_pattern.factory;
+package com.example.design_pattern_factory.factory;
 
-import com.example.design_pattern.util.RandomWrapper;
+import com.example.design_pattern_factory.util.RandomWrapper;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.design_pattern;
+package com.example.design_pattern_factory;
 
 public class Mammal extends Animal{
     private double bodyTemperatureC;

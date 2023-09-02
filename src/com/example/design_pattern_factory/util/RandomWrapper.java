@@ -1,4 +1,4 @@
-package com.example.design_pattern.util;
+package com.example.design_pattern_factory.util;
 
 import java.util.Random;
 

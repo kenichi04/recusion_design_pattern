@@ -1,15 +1,15 @@
-package com.example.design_pattern.factory;
+package com.example.design_pattern_factory.factory;
 
-import com.example.design_pattern.util.RandomWrapper;
+import com.example.design_pattern_factory.util.RandomWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayfulDogAssistant extends PlayfulPetAssistant {
+public class PlayfulRabbitAssistant extends PlayfulPetAssistant {
     @Override
     public PlayfulPet createPlayfulPet() {
-        return new Dog(RandomWrapper.getRanDouble(0.15, 1.3),
-                RandomWrapper.getRanDouble(9.5, 25.8),
+        return new Rabbit(RandomWrapper.getRanDouble(0.15, 0.4),
+                RandomWrapper.getRanDouble(2.2, 10.2),
                 RandomWrapper.ranBoolean() ? "male" : "female");
     }
 

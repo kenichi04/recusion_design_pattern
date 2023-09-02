@@ -1,6 +1,6 @@
-package com.example.design_pattern;
+package com.example.design_pattern_factory;
 
-import com.example.design_pattern.factory.PlayfulPetAssistant;
+import com.example.design_pattern_factory.factory.PlayfulPetAssistant;
 
 import java.util.HashMap;
 import java.util.Map;

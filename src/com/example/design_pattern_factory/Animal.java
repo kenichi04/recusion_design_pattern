@@ -1,6 +1,6 @@
-package com.example.design_pattern;
+package com.example.design_pattern_factory;
 
-import com.example.design_pattern.util.BMI;
+import com.example.design_pattern_factory.util.BMI;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

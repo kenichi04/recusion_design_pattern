@@ -1,7 +1,7 @@
-package com.example.design_pattern.factory;
+package com.example.design_pattern_factory.factory;
 
-import com.example.design_pattern.Mammal;
-import com.example.design_pattern.Person;
+import com.example.design_pattern_factory.Mammal;
+import com.example.design_pattern_factory.Person;
 
 import java.util.Arrays;
 

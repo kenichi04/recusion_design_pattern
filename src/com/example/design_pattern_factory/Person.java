@@ -1,6 +1,6 @@
-package com.example.design_pattern;
+package com.example.design_pattern_factory;
 
-import com.example.design_pattern.util.Name;
+import com.example.design_pattern_factory.util.Name;
 
 public class Person extends Mammal {
     public static final String SPECIES = "Human";

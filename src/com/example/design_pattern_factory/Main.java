@@ -1,8 +1,8 @@
-package com.example.design_pattern;
+package com.example.design_pattern_factory;
 
-import com.example.design_pattern.factory.PlayfulCatAssistant;
-import com.example.design_pattern.factory.PlayfulDogAssistant;
-import com.example.design_pattern.factory.PlayfulRabbitAssistant;
+import com.example.design_pattern_factory.factory.PlayfulCatAssistant;
+import com.example.design_pattern_factory.factory.PlayfulDogAssistant;
+import com.example.design_pattern_factory.factory.PlayfulRabbitAssistant;
 
 public class Main {
     public static void main(String[] args) {
