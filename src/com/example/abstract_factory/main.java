@@ -1,5 +1,6 @@
 package com.example.abstract_factory;
 
+import com.example.abstract_factory.factory.AntarcticaLaserTagMonsterFactory;
 import com.example.abstract_factory.factory.GenericLaserTagMonsterFactory;
 
 public class main {
@@ -9,5 +10,6 @@ public class main {
                 30, 1.65, 95, "feamale");
 
         fairyWorld.playLaserTag(jessica, new GenericLaserTagMonsterFactory());
+        fairyWorld.playLaserTag(jessica, new AntarcticaLaserTagMonsterFactory());
     }
 }
