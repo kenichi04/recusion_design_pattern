@@ -2,17 +2,12 @@ package com.example.builder_sandwich;
 
 public class Main {
     public static void main(String[] args) {
-        // builderを通してsandwich作成
         SandwichBuilder sandwichBuilder = new SandwichBuilder();
 
-        sandwichBuilder.addDoughType("Italian");
-        sandwichBuilder.addTopping1("Chicken");
-        sandwichBuilder.addTopping2("Bacon");
-        sandwichBuilder.addSauce("Ranch");
-        sandwichBuilder.addVegetable1("Lettuce");
-        sandwichBuilder.addVegetable2("Red Onions");
-        sandwichBuilder.addVegetable3("Tomato");
-        sandwichBuilder.addCheese();
+        sandwichBuilder.addDoughType("Italian").addTopping1("Chicken")
+                .addTopping2("Bacon").addSauce("Ranch")
+                .addVegetable1("Lettuce").addVegetable2("Red Onions")
+                .addVegetable3("Tomato").addCheese();
 
         Sandwich chickenAndBacon = sandwichBuilder.build();
         System.out.println(chickenAndBacon);

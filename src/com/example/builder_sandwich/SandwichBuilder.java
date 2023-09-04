@@ -24,23 +24,90 @@ public class SandwichBuilder {
         this.reset();
     }
 
-    public void addDoughType(String doughType) { this.doughType = doughType; }
-    public void addTopping1(String topping) { this.topping1 = topping; }
-    public void addTopping2(String topping) { this.topping2 = topping; }
-    public void addTopping3(String topping) { this.topping3 = topping; }
-    public void addVegetable1(String vegetable) { this.vegetable1 = vegetable; }
-    public void addVegetable2(String vegetable) { this.vegetable2 = vegetable; }
-    public void addVegetable3(String vegetable) { this.vegetable3 = vegetable; }
-    public void addVegetable4(String vegetable) { this.vegetable4 = vegetable; }
-    public void addCheese() { this.cheese = true; }
-    public void noCheese() { this.cheese = false; }
-    public void addKetchup() { this.ketchup = true; }
-    public void noKetchup() { this.ketchup = false; }
-    public void addMustard() { this.mustard = true; }
-    public void noMustard() { this.mustard = false; }
-    public void addMayo() { this.mayonnaise = true; }
-    public void noMayo() { this.mayonnaise = false; }
-    public void addSauce(String sauce) { this.sauce = sauce; }
+    public SandwichBuilder addDoughType(String doughType) {
+        this.doughType = doughType;
+        return this;
+    }
+
+    public SandwichBuilder addTopping1(String topping) {
+        this.topping1 = topping;
+        return this;
+    }
+
+    public SandwichBuilder addTopping2(String topping) {
+        this.topping2 = topping;
+        return this;
+    }
+
+    public SandwichBuilder addTopping3(String topping) {
+        this.topping3 = topping;
+        return this;
+    }
+
+    public SandwichBuilder addVegetable1(String vegetable) {
+        this.vegetable1 = vegetable;
+        return this;
+    }
+
+    public SandwichBuilder addVegetable2(String vegetable) {
+        this.vegetable2 = vegetable;
+        return this;
+    }
+
+    public SandwichBuilder addVegetable3(String vegetable) {
+        this.vegetable3 = vegetable;
+        return this;
+    }
+
+    public SandwichBuilder addVegetable4(String vegetable) {
+        this.vegetable4 = vegetable;
+        return this;
+    }
+
+    public SandwichBuilder addCheese() {
+        this.cheese = true;
+        return this;
+    }
+
+    public SandwichBuilder noCheese() {
+        this.cheese = false;
+        return this;
+    }
+
+    public SandwichBuilder addKetchup() {
+        this.ketchup = true;
+        return this;
+    }
+
+    public SandwichBuilder noKetchup() {
+        this.ketchup = false;
+        return this;
+    }
+
+    public SandwichBuilder addMustard() {
+        this.mustard = true;
+        return this;
+    }
+
+    public SandwichBuilder noMustard() {
+        this.mustard = false;
+        return this;
+    }
+
+    public SandwichBuilder addMayo() {
+        this.mayonnaise = true;
+        return this;
+    }
+
+    public SandwichBuilder noMayo() {
+        this.mayonnaise = false;
+        return this;
+    }
+
+    public SandwichBuilder addSauce(String sauce) {
+        this.sauce = sauce;
+        return this;
+    }
 
     // build関数
     public Sandwich build() {
@@ -54,7 +121,7 @@ public class SandwichBuilder {
     }
 
     // reset関数
-    public void reset() {
+    public SandwichBuilder reset() {
         this.doughType = SandwichBuilder.DEFAULT_DOUGH;
         this.topping1 = SandwichBuilder.DEFAULT_TOPPING1;
         this.topping2 = null;
@@ -69,5 +136,6 @@ public class SandwichBuilder {
         this.mustard = false;
         this.mayonnaise = false;
         this.sauce = null;
+        return this;
     }
 }
